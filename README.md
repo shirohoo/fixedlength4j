@@ -1,5 +1,15 @@
 # Fixed Length Format for Java
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Usage](#usage)
+4. [Customization](#customization)
+    1. [Byte Order](#byte-order)
+    2. [Converters](#converters)
+
+---
+
 ## Introduction
 This project is a fast and lightweight, zero-dependency nio-based pure Java 8+ library with the goal of converting Fixed Length Format files into Java classes and performing the reverse operation.
 
