@@ -56,6 +56,18 @@ ByteBuffer buffer = new FixedLengthFormat<>(Employee.class).serialize(employees)
 
 ## Customization
 
+### Byte Order
+
+Java's byte order is basically `big-endian`. Since network byte order is the same, there is usually no need to change it. 
+However, if you are using `little-endian` based hardware and need to access the hardware directly, you can very easy change the byte order by modifying the `ByteOrder` of a `java.nio.ByteBuffer`.
+
+```java
+ByteBuffer byteBuffer = ByteBuffer.allocate(10);
+byteBuffer.order(ByteOrder.BIG_ENDIAN);
+```
+
+### Converters
+
 Basically implemented converters support the following types.
 
 - String
@@ -91,4 +103,3 @@ For example:
 ```java
 List<Employee> employees = new FixedLengthFormat<>(Employee.class, new MyConverterRegistrar()).deserialize(buffer);
 ```
-
